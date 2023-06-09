@@ -3,7 +3,7 @@ services:
   drupal:
     image: bitnami/drupal:latest
     ports:
-      - 80:80
+      - 8080:80
     volumes:
       - drupal_data:/bitnami/drupal
     environment:
@@ -28,8 +28,10 @@ services:
     image: nginx:latest
     volumes:
       - nginx_data:/etc/nginx
+      - certbot_data:/etc/letsencrypt
     ports:
       - 80:80
+      - 443:443
     environment:
       - DOMAIN=mustafatufekci.me
 
