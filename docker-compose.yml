@@ -23,3 +23,12 @@ services:
       - MARIADB_PASSWORD=30718008
       - MARIADB_DATABASE=final
       - ALLOW_EMPTY_PASSWORD=yes
+
+  nginx:
+    image: nginx:latest
+    volumes:
+      - nginx_data:/etc/nginx
+    ports:
+      - 80:80
+    environment:
+      - DOMAIN=mustafatufekci.me
