@@ -32,3 +32,21 @@ services:
       - 80:80
     environment:
       - DOMAIN=mustafatufekci.me
+
+  certbot:
+    image: certbot/certbot:latest
+    volumes:
+      - certbot_data:/etc/letsencrypt
+    environment:
+      - DOMAIN=mustafatufekci.me
+
+
+volumes:
+  drupal_data:
+    driver: local
+  mariadb_data:
+    driver: local
+  nginx_data:
+    driver: local
+  certbot_data:
+    driver: local
